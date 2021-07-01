@@ -1,3 +1,3 @@
 function ExpenseItem() {
-  return <div></div>
+  return <div>Expense Item</div>
 }
