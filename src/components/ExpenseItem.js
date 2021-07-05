@@ -4,7 +4,6 @@ import './ExpenseItem.css'
 function ExpenseItem(props) {
   const expnTitle = props.title
   const expAmount = props.amount
-
   return (
     <div className="expense-item">
       <ExpnDate date={props.date} />
