@@ -1,12 +1,16 @@
 import './ExpenseItem.css'
 
-function ExpenseItem() {
+function ExpenseItem(props) {
+  const expnDate = props.date
+  const expnTitle = props.title
+  const expAmount = props.amount
+
   return (
     <div className="expense-item">
-      <div>March 20th 2021</div>
+      <div>{expnDate.toISOString()}</div>
       <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">294.7</div>
+        <h2>{expnTitle}</h2>
+        <div className="expense-item__price">{expAmount}</div>
       </div>
     </div>
   )
