@@ -7,7 +7,11 @@ function ExpenseItem(props) {
 
   return (
     <div className="expense-item">
-      <div>{expnDate.toISOString()}</div>
+      <div>
+        <div>{props.date.toLocaleString('en-US', { month: 'long' })}</div>
+        <div>Year</div>
+        <div>Date</div>
+      </div>
       <div className="expense-item__description">
         <h2>{expnTitle}</h2>
         <div className="expense-item__price">{expAmount}</div>
