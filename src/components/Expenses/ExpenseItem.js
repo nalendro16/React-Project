@@ -1,6 +1,6 @@
 import ExpnDate from './ExpnDate'
 import './ExpenseItem.css'
-import Card from './Card'
+import Card from '../UI/Card'
 
 function ExpenseItem(props) {
   const expnTitle = props.title
