@@ -2,7 +2,7 @@ import ExpnDate from './ExpnDate'
 import './ExpenseItem.css'
 import Card from '../UI/Card'
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   const expnTitle = props.title
   const expAmount = props.amount
   return (
