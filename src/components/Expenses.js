@@ -2,7 +2,6 @@ import ExpenseItem from './ExpenseItem'
 import './Expenses.css'
 
 function Expenses(props) {
-  console.log(props.item)
   return (
     <div className="expenses">
       <ExpenseItem
