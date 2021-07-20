@@ -6,7 +6,6 @@ import './Expenses.css'
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2021')
-
   const selectYear = (saveSelectYear) => {
     console.log('updated year ' + saveSelectYear)
     setFilteredYear(saveSelectYear)
@@ -15,26 +14,13 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpensesFilter onSelectYear={selectYear} onSelectedYear={filteredYear} />
-      <ExpenseItem
-        title={props.item[0].title}
-        amount={props.item[0].amount}
-        date={props.item[0].date}
-      />
-      <ExpenseItem
-        title={props.item[1].title}
-        amount={props.item[1].amount}
-        date={props.item[1].date}
-      />
-      <ExpenseItem
-        title={props.item[2].title}
-        amount={props.item[2].amount}
-        date={props.item[2].date}
-      />
-      <ExpenseItem
-        title={props.item[3].title}
-        amount={props.item[3].amount}
-        date={props.item[3].date}
-      />
+      {props.item.map((extract) => (
+        <ExpenseItem
+          title={extract.title}
+          amount={extract.amount}
+          date={extract.date}
+        />
+      ))}
     </Card>
   )
 }
