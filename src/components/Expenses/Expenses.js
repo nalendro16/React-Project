@@ -19,14 +19,18 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpensesFilter onSelectYear={selectYear} onSelectedYear={filteredYear} />
-      {filterExpenses.map((extract) => (
-        <ExpenseItem
-          key={extract.id}
-          title={extract.title}
-          amount={extract.amount}
-          date={extract.date}
-        />
-      ))}
+      {filterExpenses.length === 0 ? (
+        <h2>Not found</h2>
+      ) : (
+        filterExpenses.map((extract) => (
+          <ExpenseItem
+            key={extract.id}
+            title={extract.title}
+            amount={extract.amount}
+            date={extract.date}
+          />
+        ))
+      )}
     </Card>
   )
 }
