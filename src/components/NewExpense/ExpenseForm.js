@@ -1,5 +1,7 @@
 import './ExpenseForm.css'
 import { useState } from 'react'
+import Label from '../UI/Label'
+import Input from '../UI/Input'
 
 const ExpenseForm = (props) => {
   const [entTitle, setEntTitle] = useState('')
@@ -28,17 +30,16 @@ const ExpenseForm = (props) => {
     setEntAmount('')
     setEntDate('')
   }
-
   return (
     <form onSubmit={submitHandle}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label htmlFor="">Title</label>
-          <input type="text" value={entTitle} onChange={titleChange} />
+          <Label name="Title" />
+          <Input type="text" value={entTitle} onChange={titleChange} />
         </div>
         <div className="new-expense__control">
-          <label htmlFor="">Amount</label>
-          <input
+          <Label name="Amount" />
+          <Input
             type="number"
             min="0.01"
             step="0.01"
@@ -48,7 +49,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__control">
           <label htmlFor="">Date</label>
-          <input
+          <Input
             type="date"
             min="2019-01-01"
             max="2022-12-31"
@@ -58,7 +59,9 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add Expense</button>
-          <button type="reset">Cancel</button>
+          <button type="button" onClick={props.onCancel}>
+            Cancel
+          </button>
         </div>
       </div>
     </form>
