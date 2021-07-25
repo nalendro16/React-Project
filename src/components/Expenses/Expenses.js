@@ -1,4 +1,4 @@
-import ExpenseItem from './ExpenseItem'
+import ExpenseList from './ExpenseList'
 import ExpensesFilter from './ExpensesFilter'
 import Card from '../UI/Card'
 import { useState } from 'react'
@@ -9,7 +9,6 @@ const Expenses = (props) => {
 
   const selectYear = (saveSelectYear) => {
     setFilteredYear(saveSelectYear)
-    console.log(saveSelectYear)
   }
 
   const filterExpenses = props.item.filter((newData) => {
@@ -19,18 +18,7 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpensesFilter onSelectYear={selectYear} onSelectedYear={filteredYear} />
-      {filterExpenses.length === 0 ? (
-        <h2>Not found</h2>
-      ) : (
-        filterExpenses.map((extract) => (
-          <ExpenseItem
-            key={extract.id}
-            title={extract.title}
-            amount={extract.amount}
-            date={extract.date}
-          />
-        ))
-      )}
+      <ExpenseList sendProps={filterExpenses} />
     </Card>
   )
 }

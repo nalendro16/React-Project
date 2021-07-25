@@ -22,6 +22,12 @@ const DUMY_DATA = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: 'e5',
+    title: 'New T-shirt',
+    amount: 40,
+    date: new Date(2019, 5, 12),
+  },
 ]
 const App = () => {
   const [expenses, setExpenses] = useState(DUMY_DATA)

@@ -1,7 +1,7 @@
 .new-expense__controls {
   display: flex;
   flex-wrap: wrap;
-  order: 4;
+  order: 3;
   gap: 1rem;
   margin-bottom: 1rem;
   text-align: left;
@@ -18,13 +18,11 @@
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 11rem;
-  max-width: 100%;
+  width: 15rem;
 }
 
 .new-expense__actions {
-  margin-top: 1.5rem;
-  justify-content: center;
+  margin: auto;
 }
 @media only screen and (max-width: 768px) {
   .new-expense__controls {
@@ -35,8 +33,8 @@
   .new-expense__control input {
     width: 100%;
   }
-  .new-expense__actions button {
-    width: 100%;
-    /* text-align: center; */
-  }
+  /* .new-expense__actions button {
+    margin: 2px;
+    width: 80%;
+  } */
 }
