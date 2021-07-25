@@ -7,10 +7,8 @@ const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expnseData = {
       ...enteredExpenseData,
-      // id: Math.floor(Math.random.toString()),
       id: newID(),
     }
-    console.log(expnseData.id)
     props.onAddExpense(expnseData)
   }
   const [isSetNew, setNew] = useState(false)
