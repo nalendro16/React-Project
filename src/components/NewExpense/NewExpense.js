@@ -1,12 +1,14 @@
 import './NewExpense.css'
 import Form from './ExpenseForm'
 import { useState } from 'react'
+import newID from './newid'
 
 const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expnseData = {
       ...enteredExpenseData,
-      id: Math.floor(Math.random.toString()),
+      // id: Math.floor(Math.random.toString()),
+      id: newID(),
     }
     console.log(expnseData.id)
     props.onAddExpense(expnseData)

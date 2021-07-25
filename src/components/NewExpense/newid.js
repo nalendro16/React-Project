@@ -1,6 +1,7 @@
 let lastID = 5
 
-export default (prefix = 'id') => {
+const newid = (prefix = 'e') => {
   lastID++
-  return lastID
+  return `${lastID}${prefix}`
 }
+export default newid
