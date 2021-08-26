@@ -25,7 +25,7 @@ const ExpenseForm = (props) => {
       amount: +entAmount,
       date: new Date(entDate),
     }
-    console.log(expenseData.amount)
+    console.log(expenseData)
     props.onSaveExpenseData(expenseData)
     setEntTitle('')
     setEntAmount('')
@@ -40,7 +40,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__control">
           <Label name="Amount" />
-          <input
+          <Input
             type="number"
             min="0.01"
             step="0.01"
@@ -49,7 +49,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__control">
-          <label htmlFor="">Date</label>
+          <Label name="Date" />
           <Input
             type="date"
             min="2019-01-01"
